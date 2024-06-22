@@ -6,7 +6,9 @@ export default defineNuxtConfig({
       googleAiApiKey: process.env.GOOGLE_AI_API_KEY
     }
   },
-  build: {
-    transpile: ['showdown']
+  runtimeConfig: {
+    public: {
+      googleAiApiKey: process.env.NUXT_PUBLIC_GOOGLE_AI_API_KEY
+    }
   }
 })

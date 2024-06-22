@@ -32,19 +32,23 @@
   
   <script>
   import { GoogleGenerativeAI } from '@google/generative-ai'
-  import showdown from 'showdown'
   
   export default {
     data() {
       return {
         genAI: null,
         messageHistory: "",
-        converter: null
+        converter: null,
+        fullResponse: "", // New variable to store the complete response
       }
     },
     mounted() {
       this.genAI = new GoogleGenerativeAI(this.$config.public.googleAiApiKey)
-      this.converter = new showdown.Converter({ tables: true })
+      
+      // Import showdown dynamically
+      import('showdown').then(showdown => {
+        this.converter = new showdown.default.Converter({ tables: true })
+      })
     },
     methods: {
       async generateCode() {
@@ -55,18 +59,23 @@
   
         copyButton.style.display = 'none'
         generateButton.innerHTML = 'Summarising Text <i class="fa-solid fa-atom fa-spin fa-xl icon-def-left"></i>'
+        outputDiv.innerHTML = ''
+        this.fullResponse = "" // Reset the full response
   
         try {
           const model = this.genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" })
           const result = await model.generateContentStream("Summarise the following text and return in key dot points:" + topicInput)
   
-          let generatedText = ''
           for await (const chunk of result.stream) {
-            generatedText += chunk.text()
+            const chunkText = chunk.text()
+            this.fullResponse += chunkText // Accumulate the full response
+            outputDiv.textContent += chunkText // Show raw text while streaming
           }
   
-          // Convert markdown to HTML
-          outputDiv.innerHTML = this.converter.makeHtml(generatedText)
+          // Process the full response with Markdown converter
+          if (this.converter) {
+            outputDiv.innerHTML = this.converter.makeHtml(this.fullResponse)
+          }
   
           copyButton.style.display = 'inline'
           document.getElementById('additionalQuestionForm').style.display = 'block'
@@ -78,7 +87,7 @@
         }
       },
       copyCode() {
-        const codeToCopy = document.getElementById('output').innerText // Use innerText to get plain text
+        const codeToCopy = document.getElementById('output').innerText
         navigator.clipboard.writeText(codeToCopy)
           .then(() => {
             document.getElementById("copyButton").innerHTML = 'Copied Text <i class="fa-solid fa-check icon-def-left"></i>'
@@ -98,6 +107,7 @@
         this.messageHistory += `\n\nUser: ${additionalQuestionInput}`
   
         outputDiv.innerHTML = ''
+        this.fullResponse = "" // Reset the full response
         copyButton.innerHTML = 'Copy Text <i class="fa-solid fa-copy icon-def-left"></i>'
         copyButton.style.display = 'none'
         generateButton.innerHTML = 'Searching context provided <i class="fa-solid fa-atom fa-spin fa-xl icon-def-left"></i>'
@@ -106,13 +116,16 @@
           const model = this.genAI.getGenerativeModel({ model: "gemini-pro" })
           const result = await model.generateContentStream(topicInput + "\n\n" + "Message History:" + this.messageHistory)
   
-          let generatedText = ''
           for await (const chunk of result.stream) {
-            generatedText += chunk.text()
+            const chunkText = chunk.text()
+            this.fullResponse += chunkText // Accumulate the full response
+            outputDiv.textContent += chunkText // Show raw text while streaming
           }
   
-          // Convert markdown to HTML
-          outputDiv.innerHTML = this.converter.makeHtml(generatedText)
+          // Process the full response with Markdown converter
+          if (this.converter) {
+            outputDiv.innerHTML = this.converter.makeHtml(this.fullResponse)
+          }
   
           copyButton.style.display = 'inline'
         } catch (error) {
