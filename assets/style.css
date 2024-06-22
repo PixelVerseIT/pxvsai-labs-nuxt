@@ -1,0 +1,517 @@
+/* (C) COPYRIGHT 2023 HAYDEN KONG. ALL RIGHTS RESERVED. EMAIL CONTACT@PIXELVERSE.TECH FOR MORE INFORMATION */
+
+
+::selection {
+    /* Change highlight background color to black */
+    background: #434cff;
+    /* Change highlight text color to white if original text color is black, otherwise to black */
+    color: black;
+  }
+  
+  ::selection {
+    color: white; /* Original text color is black, so invert it to white */
+  }
+
+  
+
+  
+* {
+    font-family: poppins;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #171717;
+    font-family: poppins;
+    color: white;
+}
+
+.d-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.menu {
+    flex: 1; /* Takes up 1/5 of the container */
+    width: 216px;
+    height: 100%;
+    background-color: #1e1f20;
+    /* border-radius: 10px; */
+    padding: 20px;
+    /* margin: 10px 0px 10px 10px; */
+}
+
+.content {
+    flex: 5; /* Takes up 4/5 of the container */
+    background-color: #171717;
+    /* border-radius: 10px; */
+    
+
+    /* Kind of makes the index.html look not very centered vertically */
+    padding: 30px;
+    /* margin: 10px; */
+    overflow-y: auto; /* Add scroll to the content */
+    max-height: 100%; /* Adjust as needed */
+}
+
+.image {
+    width: 100%;
+    border-radius: 10px;
+    /* margin-bottom: 20px; */
+    margin-bottom: 15px;
+}
+
+.menu-select, .upgrade {
+    font-size: 1.0em;
+    /* background-color: #323232; */
+    padding: 8px;
+    border-radius: 8px;
+    transition: 0.1s;
+    margin-bottom: 2px;
+}
+
+.menu-select:hover {
+    background-color: #2e2e2e;
+    cursor: pointer;
+}
+
+.button{
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #4e4e4e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
+
+.button:hover {
+    background-color: #333333;
+}
+
+.aistore-icon{
+    padding: none;
+    padding-right: 10px;
+}
+
+.icon-def-right{
+    margin-right: 5px;
+}
+
+.icon-def-left{
+    margin-left: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.icon {
+    margin-right: 20px;
+    text-align: center;
+    align-items: center;
+    width: 30px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.small-text {
+    font-size: 0.8em;
+    color: #a0a0a0;
+    text-align: center;
+}
+
+
+
+hr.rounded {
+    border-top: 3px solid #bbb;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.warning {
+    color: #5288ce;
+    background-color: rgb(100, 100, 100);
+    padding: 2px;
+    padding-left: 15px;
+    max-width: 80%;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 1000px) {
+    .d-container {
+        flex-direction: column; /* Change to column layout on small screens */
+    }
+
+    .menu, .content {
+        margin: 10px;
+    }
+
+    .image {
+        margin-bottom: 10px; /* Adjust the margin as needed */
+    }
+
+    .pro-buttons {
+        position: static !important; /* Reset position to default */
+        margin-top: 20px; /* Adjust margin-top as needed */
+        margin-bottom: 20px; /* Add margin-bottom as needed */
+    }
+
+    .survey-tab{
+        display: none;
+    }
+
+
+}
+
+/* .menu-select{color: var(--secondary-color);} */
+
+.pro-buttons {
+    display: flex;
+}
+
+
+.pro-buttons .menu-select{
+    width: 100%;
+    /* background-color: #0f5948; */
+    background-color: #333333;
+}
+
+.pro-buttons .menu-select:hover {
+    background-color: #2e2e2e;
+    cursor: pointer;
+    box-shadow: 0 0 15px #007bff;
+    transition: 0.4s;
+    /* color: #4f93dc; */
+}
+
+.pro-buttons .menu-select:not(:hover):not(:focus) {
+    transition: 0.5s;
+  }
+
+
+
+
+.ad{
+    padding: 10px;
+}
+
+.extra-small-text{
+    font-size: 0.8em;
+    color: #a0a0a0;
+    margin-top: 5px;
+}
+
+li{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+ul{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+p{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#output h2{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+
+
+/* SURVEY */
+/* Styles for the tab button */
+.survey-tab {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    background-color: rgb(255, 255, 255); /* Example: Red background */
+    color: rgb(0, 0, 0);
+    padding: 20px 13px;
+    border: none; 
+    cursor: pointer;
+    z-index: 1000; /* Ensure tab is on top */
+    writing-mode: vertical-rl; /* Vertical text, facing right */
+    transform: translateY(-50%) rotate(180deg); /* Rotate the text to face right */
+    transition: transform 0.5s ease, right 0.5s ease; /* Transition for movement */
+    border-top-right-radius: 10px; /* Round top left corner */
+    border-bottom-right-radius: 10px; /* Round bottom left corner */
+    font-size: 1.1em;
+    font-weight: 400;
+  }
+
+    /* Styles for the survey iframe container */
+    .iframe-container {
+      position: fixed;
+      right: -400px; /* Initially off screen */
+      top: 50%;
+      transform: translateY(-50%);
+      transition: right 0.5s ease; /* Transition for movement */
+      z-index: 999; /* Ensure iframe container is above other content */
+    }
+
+    /* Styles for the survey iframe */
+    .survey-iframe {
+      width: 400px;
+      height: 70vh; /* 70% of the viewport height */
+      background-color: white;
+      border: none;
+      border-top-left-radius: 10px; /* Rounded corners */
+      border-bottom-left-radius: 10px; /* Rounded corners */
+    }
+
+
+
+/* END SURVEY */
+
+
+
+
+
+
+
+
+
+
+
+
+/* MOBILE */
+/* Add a class for the mobile menu */
+.mobile-menu {
+    display: none; /* Initially hide the mobile menu */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #1e1f20;
+    padding: 20px;
+    z-index: 997; /* Lower than hamburger icon initially */
+    overflow-x: hidden;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+    transform: translateX(-100%); /* Initially off-screen */
+}
+
+/* Style the hamburger menu icon */
+.hamburger {
+    display: none; /* Hide by default for desktop view */
+    cursor: pointer;
+    margin: 20px;
+    z-index: 999; /* On top of the mobile menu when open */
+}
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    /* Show the hamburger icon and hide the regular menu for mobile view */
+    .menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger icon */
+    }
+
+    .mobile-menu {
+        display: block; /* Show the mobile menu */
+    }
+
+    .overlay {
+        display: none; /* Initially hide the overlay */
+    }
+}
+
+
+
+
+
+
+
+/* NEW UI KIT */
+.textsecondary{
+    color: #9f9f9f;
+}
+
+.b-primary{
+    background-color: var(--button-primarycolor);
+    color: white;
+    padding: 12px 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+}
+
+.b-primary:hover{
+    background-color: var(--button-primaryhovercolor);
+    color: white;
+}
+
+.b-secondary{
+    background-color: var(--button-secondarycolor);
+    color: white;
+    padding: 12px 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+}
+
+.b-secondary:hover{
+    background-color: var(--button-secondaryhovercolor);
+    color: white;
+}
+
+.title{
+    color: #007bff;
+    margin: 0px;
+}
+
+.customize {
+    margin-top: -10px;
+    color: var(--text-color-secondary);
+}
+
+/* background-color: #313131; */
+
+
+
+
+
+.output-text-container {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #2d2d2d;
+    color: white;
+    min-height: 250px;
+    border: 1px solid #474747;
+}
+
+
+.textarea-input {
+    min-height: 100px;
+    line-height: 1.5;
+    resize: vertical;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #343434;
+    color: white;
+    width: 90%;
+    outline: none;
+}
+
+.textarea-input:focus {
+    background-color: #2b2b2b;
+}
+
+.default-input {
+    line-height: 1.5;
+    resize: vertical;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #343434;
+    color: white;
+    width: 90%;
+    outline: none;
+}
+
+.default-input:focus {
+    background-color: #2b2b2b;
+}
+
+.followup-input {
+    line-height: 1.8;
+    resize: vertical;
+    border: none;
+    border-radius: 5px;
+    background-color: #343434;
+    color: white;
+    outline: none;
+    padding: 12px;
+    padding-left: 15px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.followup-input:focus {
+    background-color: #2b2b2b;
+}
+
+.followup-form {
+    margin-top: 20px;
+    display: inline;
+}
+
+h1 {
+    color: #007bff;
+    padding-bottom: 0;
+}
+
+.chip {
+    position: relative;
+    display: inline-flex;
+    padding: 0.4em 0.8em;
+    background-color: #25d5a6;
+    color: #000000;
+    font-weight: bold;
+    font-size: 0.8em;
+    border-radius: 0.2em;
+    margin-right: 0.5em;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+.h1-container {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+/* END NEW UI KIT */
+
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #9f9f9f;
+    --text-color: #9f9f9f;
+    --text-color-secondary: #9f9f9f;
+
+    --button-primarycolor: #007bff;
+    --button-primaryhovercolor: #0056b3;
+
+    --button-secondarycolor: #6c757d;
+    --button-secondaryhovercolor: #5a6268;
+}
