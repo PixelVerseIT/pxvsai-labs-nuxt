@@ -49,6 +49,7 @@
       }
     },
     mounted() {
+      console.log('Google AI API Key:', this.$config.public.googleAiApiKey)
       this.genAI = new GoogleGenerativeAI(this.$config.public.googleAiApiKey)
       
       // Import showdown dynamically
