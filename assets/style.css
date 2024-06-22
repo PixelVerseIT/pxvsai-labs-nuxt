@@ -363,6 +363,7 @@ p{
     transition: background-color 0.3s;
     font-size: 1.0rem;
     margin-bottom: 10px;
+    margin-right: 8px;
 }
 
 .b-primary:hover{

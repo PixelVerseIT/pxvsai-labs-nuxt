@@ -1,4 +1,10 @@
 <template>
+
+<head>
+  <title>AI Summariser | PixelVerseAI Labs</title>
+</head>
+
+
     <div>
       <div class="h1-container">
         <h1 class="title">AI Summariser</h1> <div class="chip">All-New</div>
@@ -23,7 +29,7 @@
   
       <div class="followup-form" id="additionalQuestionForm" style="display: none;">
         <input class="followup-input" type="text" id="additionalQuestionInput" placeholder="Enter your additional question...">
-        <button id="askButton" class="b-primary" @click="askAgain">Ask Again</button>
+        <button id="askButton" style="margin-left: 8px" class="b-primary" @click="askAgain">Ask Again</button>
       </div>
   
       <p class="small-text">PixelVerseAI can make mistakes. Please double-check responses. <a href="https://ai.pixelverse.tech/safety">Report here</a></p>
