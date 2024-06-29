@@ -4,7 +4,7 @@ useHead({
     {
       src: 'https://kit.fontawesome.com/dad552d9bf.js',
       // valid options are: 'head' | 'bodyClose' | 'bodyOpen'
-      tagPosition: 'head'
+      tagPosition: 'bodyClose'
     }
   ]
 })
@@ -49,7 +49,7 @@ useHead({
             <div style="text-align: center; display: grid;">
                 <!-- <a href="s" style="text-align: center; font-size: 0.9rem; color: rgb(174, 174, 174);">Try the beta</a> -->
                 <a href="#" style="text-align: center; font-size: 0.7rem; color: gray">Version: Closed Beta 3 (DESKTOP)</a>
-                <p style="text-align: center; font-size: 0.6rem; color: gray">Design © 2024 <a href="https://ai.pixelverse.tech">PixelVerseAI</a>. Double-check AI responses.</p>
+                <p style="text-align: center; font-size: 0.6rem; color: gray">Design 	andcopy;	 2024 <a href="https://ai.pixelverse.tech">PixelVerseAI</a>. Double-check AI responses.</p>
                 <p style="text-align: center; font-size: 0.6rem; color: gray"><b>DESGINED BY HAYDEN. <a href="https://donate.stripe.com/9AQ2am8jZ2t1fLycMO">DONATE❤️</a></b></p>
                 <p></p>
             </div>
@@ -86,7 +86,7 @@ useHead({
             <div style="text-align: center; display: grid;">
                 <!-- <a href="s" style="text-align: center; font-size: 0.9rem; color: rgb(174, 174, 174);">Try the beta</a> -->
                 <a href="#" style="text-align: center; font-size: 0.7rem; color: gray">Version: PX-2.5.0 (MOBILE)</a>
-                <p style="text-align: center; font-size: 0.6rem; color: gray">Design © 2024 <a href="https://ai.pixelverse.tech">PixelVerseAI</a>. Double-check AI responses.</p>
+                <p style="text-align: center; font-size: 0.6rem; color: gray">Design 	andcopy;	 2024 <a href="https://ai.pixelverse.tech">PixelVerseAI</a>. Double-check AI responses.</p>
                 <p style="text-align: center; font-size: 0.6rem; color: gray"><b>DESGINED BY HAYDEN. <a href="https://donate.stripe.com/9AQ2am8jZ2t1fLycMO">DONATE❤️</a></b></p>
                 <p></p>
             </div>

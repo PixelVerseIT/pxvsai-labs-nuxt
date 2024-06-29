@@ -49,7 +49,7 @@
       }
     },
     mounted() {
-      // console.log('Google AI API Key:', this.$config.public.googleAiApiKey)
+      console.log('Google AI API Key:', this.$config.public.googleAiApiKey)
       this.genAI = new GoogleGenerativeAI(this.$config.public.googleAiApiKey)
       
       // Import showdown dynamically
@@ -116,7 +116,6 @@
         outputDiv.innerHTML = ''
         this.fullResponse = "" // Reset the full response
         copyButton.innerHTML = 'Copy Text <i class="fa-solid fa-copy icon-def-left"></i>'
-        console.log("yes")
         copyButton.style.display = 'none'
         generateButton.innerHTML = 'Searching context provided <i class="fa-solid fa-atom fa-spin fa-xl icon-def-left"></i>'
   
