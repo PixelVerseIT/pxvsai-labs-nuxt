@@ -4,7 +4,7 @@ useHead({
     {
       src: 'https://kit.fontawesome.com/dad552d9bf.js',
       // valid options are: 'head' | 'bodyClose' | 'bodyOpen'
-      tagPosition: 'bodyClose'
+      tagPosition: 'head'
     }
   ]
 })
@@ -18,7 +18,7 @@ useHead({
         </div>
         <!-- Regular menu -->
         <div class="menu">
-            <a href="/"><img class="image" src="https://ai.pixelverse.tech/app/image.png" alt=""></a>
+            <a href="/"><img class="image" src="/public/logo.png" alt=""></a>
             <p class="extra-small-text">Trending AI Tools</p>
             <a href="/elevenlabs"><div class="menu-select"><i class="fa-solid fa-volume-high fa-lg icon"></i>11Labs Speech</div></a>
             <a href="/aisummariser"><div class="menu-select"><i class="fa-solid fa-rectangle-list fa-lg icon"></i>AI Summariser</div></a>
@@ -48,8 +48,8 @@ useHead({
             </div>
             <div style="text-align: center; display: grid;">
                 <!-- <a href="s" style="text-align: center; font-size: 0.9rem; color: rgb(174, 174, 174);">Try the beta</a> -->
-                <a href="#" style="text-align: center; font-size: 0.7rem; color: gray">Version: Closed Beta 3 (DESKTOP)</a>
-                <p style="text-align: center; font-size: 0.6rem; color: gray">Design 	andcopy;	 2024 <a href="https://ai.pixelverse.tech">PixelVerseAI</a>. Double-check AI responses.</p>
+                <a href="#" style="text-align: center; font-size: 0.7rem; color: gray">Version: PROJECT HORIZON BUILD 0.1</a>
+                <p style="text-align: center; font-size: 0.6rem; color: gray">Design © 2024 <a href="https://ai.pixelverse.tech">PixelVerseAI</a>. Double-check AI responses.</p>
                 <p style="text-align: center; font-size: 0.6rem; color: gray"><b>DESGINED BY HAYDEN. <a href="https://donate.stripe.com/9AQ2am8jZ2t1fLycMO">DONATE❤️</a></b></p>
                 <p></p>
             </div>
@@ -62,7 +62,7 @@ useHead({
         </div>
         <!-- Mobile menu -->
         <div class="mobile-menu" id="mobileMMenu">
-            <a href="/app/index.html"><img class="image" src="https://ai.pixelverse.tech/app/image.png" alt=""></a>
+            <a href="/app/index.html"><img class="image" src="/public/logo.png" alt=""></a>
             <p class="extra-small-text">Trending AI Tools</p>
             <a href="/app/elevenlabs.html"><div class="menu-select"><i class="fa-solid fa-volume-high fa-lg icon"></i>11Labs Speech</div></a>
             <a href="/app/apps/aisummariser.html"><div class="menu-select"><i class="fa-solid fa-rectangle-list fa-lg icon"></i>AI Summariser</div></a>
@@ -85,8 +85,8 @@ useHead({
             <a href="/app/cortexchat.html"><div class="menu-select aistoreu"><i class="fa-solid fa-store fa-lg aistore-icon"></i>Apps</div></a> -->
             <div style="text-align: center; display: grid;">
                 <!-- <a href="s" style="text-align: center; font-size: 0.9rem; color: rgb(174, 174, 174);">Try the beta</a> -->
-                <a href="#" style="text-align: center; font-size: 0.7rem; color: gray">Version: PX-2.5.0 (MOBILE)</a>
-                <p style="text-align: center; font-size: 0.6rem; color: gray">Design 	andcopy;	 2024 <a href="https://ai.pixelverse.tech">PixelVerseAI</a>. Double-check AI responses.</p>
+                <a href="#" style="text-align: center; font-size: 0.7rem; color: gray">Version: PROJECT HORIZON BUILD 0.1</a>
+                <p style="text-align: center; font-size: 0.6rem; color: gray">Design © 2024 <a href="https://ai.pixelverse.tech">PixelVerseAI</a>. Double-check AI responses.</p>
                 <p style="text-align: center; font-size: 0.6rem; color: gray"><b>DESGINED BY HAYDEN. <a href="https://donate.stripe.com/9AQ2am8jZ2t1fLycMO">DONATE❤️</a></b></p>
                 <p></p>
             </div>

@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import '~/assets/style.css'
 import Header from '~/components/header.vue' // Import your Header component
 
 export default {
